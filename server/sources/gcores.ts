@@ -1,30 +1,26 @@
 import * as cheerio from "cheerio"
 import type { NewsItem } from "@shared/types"
-import { defineSource } from "rss-bridge"
-import { myFetch } from "#/utils/fetch"
 
 export default defineSource(async () => {
   const response: any = await myFetch("https://www.gcores.com/news")
   const $ = cheerio.load(response)
   const news: NewsItem[] = []
   
-  // 机核新闻列表在带有 news-list 类的容器中
-  $("div.news-list article").each((_, el) => {
+  // 使用 a.news 作为主选择器
+  $("a.news").each((_, el) => {
     const $el = $(el)
-    const $a = $el.find("a.news-item")
-    const url = $a.attr("href")
-    const title = $el.find("h3").text().trim()
-    const timeStr = $el.find("time").attr("datetime")
+    const url = $el.attr("href")
+    const title = $el.find(".news_content h3").text().trim()
+    const timeText = $el.find(".news_meta span").first().text().trim()
     
-    if (url && title && timeStr) {
-      // 机核的URL是相对路径，需要添加域名
-      const fullUrl = `https://www.gcores.com${url}`
+    if (url && title && timeText) {
+      const pubDate = parseRelativeTime(timeText)
       
       news.push({
-        url: fullUrl,
+        url: `https://www.gcores.com${url}`,
         title,
         id: url,
-        pubDate: new Date(timeStr).valueOf(),
+        pubDate: pubDate.valueOf(),
       })
     }
   })
@@ -34,3 +30,33 @@ export default defineSource(async () => {
     .sort((a, b) => b.pubDate! - a.pubDate!)
     .slice(0, 30)
 })
+
+// 改进的时间解析函数
+function parseRelativeTime(timeText: string): Date {
+  const now = new Date()
+  
+  // 匹配"小时前"
+  const hoursMatch = timeText.match(/(\d+)\s*小时前/)
+  if (hoursMatch) {
+    const hours = parseInt(hoursMatch[1])
+    return new Date(now.getTime() - hours * 60 * 60 * 1000)
+  }
+  
+  // 匹配"天前"
+  const daysMatch = timeText.match(/(\d+)\s*天前/)
+  if (daysMatch) {
+    const days = parseInt(daysMatch[1])
+    return new Date(now.getTime() - days * 24 * 60 * 60 * 1000)
+  }
+  
+  // 匹配"分钟前"
+  const minutesMatch = timeText.match(/(\d+)\s*分钟前/)
+  if (minutesMatch) {
+    const minutes = parseInt(minutesMatch[1])
+    return new Date(now.getTime() - minutes * 60 * 1000)
+  }
+  
+  // 如果都不匹配，返回当前时间
+  console.warn(`无法解析的时间格式: ${timeText}`)
+  return now
+}
