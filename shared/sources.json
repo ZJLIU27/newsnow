@@ -448,5 +448,12 @@
     "home": "https://www.nowcoder.com",
     "color": "blue",
     "interval": 600000
+  },
+  "gcores": {
+    "name": "机核",
+    "column": "tech",
+    "home": "https://www.gcores.com",
+    "color": "blue",
+    "interval": 600000
   }
 }

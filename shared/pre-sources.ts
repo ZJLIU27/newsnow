@@ -357,6 +357,12 @@ export const originSources = {
     type: "hottest",
     home: "https://www.nowcoder.com",
   },
+  "gcores": {
+    name: "机核",
+    column: "tech",
+    color: "blue",
+    home: "https://www.gcores.com",
+  },
 } as const satisfies Record<string, OriginSource>
 
 export function genSources() {
