@@ -359,13 +359,13 @@ export const originSources = {
   },
   "gcores": {
     name: "机核",
-    column: "tech",
+    column: "game",
     color: "blue",
     home: "https://www.gcores.com",
   },
   "indienova": {
     name: "IndieNova",
-    column: "tech",
+    column: "game",
     color: "blue",
     home: "https://www.indienova.com",
     sub: {
