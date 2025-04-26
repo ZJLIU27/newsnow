@@ -79,53 +79,12 @@ export const originSources = {
       },
     },
   },
-  "36kr": {
-    name: "36氪",
-    type: "realtime",
-    color: "blue",
-    // cloudflare pages cannot access
-    disable: "cf",
-    home: "https://36kr.com",
-    column: "tech",
-    sub: {
-      quick: {
-        title: "快讯",
-      },
-    },
-  },
-  "douyin": {
-    name: "抖音",
-    type: "hottest",
-    column: "china",
-    color: "gray",
-    home: "https://www.douyin.com",
-  },
-  "hupu": {
-    name: "虎扑",
-    disable: true,
-    home: "https://hupu.com",
-  },
-  "tieba": {
-    name: "百度贴吧",
-    title: "热议",
-    column: "china",
-    type: "hottest",
-    color: "blue",
-    home: "https://tieba.baidu.com",
-  },
   "toutiao": {
     name: "今日头条",
     type: "hottest",
     column: "china",
     color: "red",
     home: "https://www.toutiao.com",
-  },
-  "ithome": {
-    name: "IT之家",
-    color: "red",
-    column: "tech",
-    type: "realtime",
-    home: "https://www.ithome.com",
   },
   "thepaper": {
     name: "澎湃新闻",
@@ -150,24 +109,6 @@ export const originSources = {
     column: "world",
     interval: Time.Common,
     home: "https://china.cankaoxiaoxi.com",
-  },
-  "pcbeta": {
-    name: "远景论坛",
-    color: "blue",
-    column: "tech",
-    home: "https://bbs.pcbeta.com",
-    sub: {
-      windows11: {
-        title: "Windows 11",
-        type: "realtime",
-        interval: Time.Fast,
-      },
-      windows: {
-        title: "Windows 资源",
-        type: "realtime",
-        interval: Time.Fast,
-      },
-    },
   },
   "cls": {
     name: "财联社",
@@ -261,40 +202,6 @@ export const originSources = {
       },
     },
   },
-  "bilibili": {
-    name: "哔哩哔哩",
-    color: "blue",
-    home: "https://www.bilibili.com",
-    sub: {
-      "hot-search": {
-        title: "热搜",
-        column: "china",
-        type: "hottest",
-      },
-      "hot-video": {
-        title: "热门视频",
-        disable: "cf",
-        column: "china",
-        type: "hottest",
-      },
-      "ranking": {
-        title: "排行榜",
-        column: "china",
-        disable: "cf",
-        type: "hottest",
-        interval: Time.Common,
-      },
-    },
-  },
-  "kuaishou": {
-    name: "快手",
-    type: "hottest",
-    column: "china",
-    color: "orange",
-    // cloudflare pages cannot access
-    disable: "cf",
-    home: "https://www.kuaishou.com",
-  },
   "kaopu": {
     name: "靠谱新闻",
     column: "world",
@@ -310,45 +217,12 @@ export const originSources = {
     type: "realtime",
     home: "https://www.jin10.com",
   },
-  "baidu": {
-    name: "百度热搜",
-    column: "china",
-    color: "blue",
-    type: "hottest",
-    home: "https://www.baidu.com",
-  },
-  "linuxdo": {
-    name: "LINUX DO",
-    column: "tech",
-    color: "slate",
-    home: "https://linux.do/",
-    disable: "cf",
-    sub: {
-      latest: {
-        title: "最新",
-        home: "https://linux.do/latest",
-      },
-      hot: {
-        title: "今日最热",
-        type: "hottest",
-        interval: Time.Common,
-        home: "https://linux.do/hot",
-      },
-    },
-  },
   "ghxi": {
     name: "果核剥壳",
     column: "china",
     color: "yellow",
     disable: "cf",
     home: "https://www.ghxi.com/",
-  },
-  "smzdm": {
-    name: "什么值得买",
-    column: "china",
-    color: "red",
-    type: "hottest",
-    home: "https://www.smzdm.com",
   },
   "nowcoder": {
     name: "牛客",
