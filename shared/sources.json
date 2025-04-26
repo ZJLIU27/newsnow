@@ -455,5 +455,12 @@
     "home": "https://www.gcores.com",
     "color": "blue",
     "interval": 600000
+  },
+  "indienova": {
+    "name": "IndieNova",
+    "column": "tech",
+    "home": "https://www.indienova.com",
+    "color": "blue",
+    "interval": 600000
   }
 }

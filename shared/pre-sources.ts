@@ -363,6 +363,12 @@ export const originSources = {
     color: "blue",
     home: "https://www.gcores.com",
   },
+  "indienova": {
+    name: "IndieNova",
+    column: "tech",
+    color: "blue",
+    home: "https://www.indienova.com",
+  },
 } as const satisfies Record<string, OriginSource>
 
 export function genSources() {
