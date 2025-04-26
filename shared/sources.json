@@ -451,14 +451,29 @@
   },
   "gcores": {
     "name": "机核",
-    "column": "tech",
+    "column": "game",
     "home": "https://www.gcores.com",
     "color": "blue",
     "interval": 600000
   },
   "indienova": {
+    "redirect": "indienova-news",
     "name": "IndieNova",
-    "column": "tech",
+    "column": "game",
+    "home": "https://www.indienova.com",
+    "color": "blue",
+    "interval": 600000
+  },
+  "indienova-news": {
+    "name": "IndieNova",
+    "column": "game",
+    "home": "https://www.indienova.com",
+    "color": "blue",
+    "interval": 600000
+  },
+  "indienova-dev": {
+    "name": "IndieNova",
+    "column": "game",
     "home": "https://www.indienova.com",
     "color": "blue",
     "interval": 600000

@@ -368,6 +368,15 @@ export const originSources = {
     column: "tech",
     color: "blue",
     home: "https://www.indienova.com",
+    sub: {
+      news: {
+        title: "独立游戏新闻",
+        type: "hottest",
+      },
+      dev: {
+        title: "独立游戏开发",
+      },
+    },
   },
 } as const satisfies Record<string, OriginSource>
 
